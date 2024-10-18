@@ -11,22 +11,22 @@ const BookList = ({ onEdit }) => {
 
   
 
-  const fetchBooks = async (page, search) => {
+  const fetchBooks = useCallback(async (page, search) => {
     try {
-      const response = await axiosInstance.get('/books',{
+      const response = await axiosInstance.get('/books', {
         params: {
           page,
           title: search,
           limit,
         },
-      });      
-      setBooks(response.data.books);      
+      });
+      setBooks(response.data.books);
       // Optionally set total pages here if your backend returns total count
       setTotalPages(response.data.totalPages);
     } catch (error) {
       console.error('Error fetching books:', error);
     }
-  };
+  }, [limit]); 
 
   const deleteBook = async (id) => {
     try {
