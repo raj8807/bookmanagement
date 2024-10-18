@@ -11,7 +11,7 @@ const BookList = ({ onEdit }) => {
 
   
 
-  async function fetchBooks(page, search){
+  const fetchBooks = async (page, search) => {
     try {
       const response = await axiosInstance.get('/books',{
         params: {
@@ -38,7 +38,7 @@ const BookList = ({ onEdit }) => {
   };
   useEffect(() => {    
     fetchBooks(page, search);
-  },[page, search]);
+  }, [fetchBooks, page, search]);
 
   return (
     <div className="container mx-auto p-6">
