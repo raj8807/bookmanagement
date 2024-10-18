@@ -12,11 +12,11 @@ import { ConfigModule } from '@nestjs/config';
   imports: [
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: 'localhost',
-      port: 5432,
-      username: 'postgres',
-      password: 'password',
-      database: 'book_management',
+      host: process.env.DB_HOST,
+      port: Number(process.env.PORT),
+      username: process.env.DB_USERNAME,
+      password: process.env.DB_PASSWORD,
+      database: process.env.DB_DB_NAME,
       entities: [Book,User],
       synchronize: true,
     }),
