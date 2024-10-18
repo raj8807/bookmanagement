@@ -52,9 +52,11 @@ Add the API endpoint for your backend. For example:
 
 REACT_APP_API_URL=http://localhost:3001
 
-For Start Serve 
+For Start Server 
 can start both application using single command 
 on Root  Run 
+npm install
+
 npm run dev
 
 OR 
