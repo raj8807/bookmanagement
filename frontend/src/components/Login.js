@@ -34,7 +34,7 @@ const Login = ({ onLogin }) => {
             return;
         }
         try {
-            const response = await axiosInstance.post('/auth/register', {
+            await axiosInstance.post('/auth/register', {
                 username: registerData.username,
                 password: registerData.password,
             });

@@ -9,9 +9,7 @@ const BookList = ({ onEdit }) => {
   const [totalPages, setTotalPages] = useState(1);
   const [search, setSearch] = useState('');
 
-  useEffect(() => {    
-    fetchBooks(page, search);
-  }, [page, search]);
+  
 
   const fetchBooks = async (page, search) => {
     try {
@@ -38,6 +36,9 @@ const BookList = ({ onEdit }) => {
       console.error('Error deleting book:', error);
     }
   };
+  useEffect(() => {    
+    fetchBooks(page, search);
+  }, [page, search]);
 
   return (
     <div className="container mx-auto p-6">

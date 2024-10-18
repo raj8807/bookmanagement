@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import axiosInstance from '../axios'
 
 const BookForm = ({ selectedBook, onFormSubmit, clearSelectedBook }) => {
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
   const [description, setDescription] = useState('');
-  const [error, setError] = useState(''); // State for error message
-  const token = localStorage.getItem('access_token');
+  const [error, setError] = useState(''); // State for error message  
 
   useEffect(() => {
     if (selectedBook) {
